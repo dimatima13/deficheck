@@ -1,66 +1,89 @@
-This repository contains solutions for programming challenges implemented in Go.
+# DeFi Technical Assessment
 
-## Problem 1: Number Padding
+This repository contains solutions to a technical assessment focused on algorithmic problem-solving and blockchain integration.
 
-This solution takes an input string and pads all whole numbers found in the string with leading zeros to a specified width.
+## Project Structure
 
-### Implementation Details
-
-The solution uses a character-by-character parsing approach to identify whole numbers while correctly handling decimal numbers. Key features:
-
-- **Decimal handling**: Numbers that are part of decimal values (e.g., "3.14") are treated specially - only the integer part is padded
-- **Performance**: O(n) time complexity where n is the length of the input string
-- **Memory**: O(n) space complexity for the output string
-- **Unicode support**: Works correctly with Unicode characters
-
-### Running the Solution
-
-#### Run the demo program:
-```bash
-cd problem1/cmd
-go run main.go "James Bond 7" 3
+```
+.
+├── problem1/          # String processing algorithm
+├── problem2/          # DeFi protocol integration
+└── README.md          # This file
 ```
 
-#### Run tests:
+## Problems Overview
+
+### Problem 1: String Processing
+Implementation of a string manipulation algorithm with specific formatting requirements. The solution demonstrates efficient text parsing and transformation techniques.
+
+**Key aspects:**
+- Algorithm design and optimization
+- Edge case handling
+- Performance benchmarking
+- Comprehensive testing
+
+### Problem 2: Blockchain Integration
+Integration with a decentralized finance (DeFi) protocol on Solana blockchain. The solution showcases direct smart contract interaction and real-time data processing.
+
+**Key aspects:**
+- Protocol research and selection
+- Smart contract data parsing
+- Performance optimization
+- Multiple data source strategies
+
+## Technical Approach
+
+Both solutions prioritize:
+- **Performance**: Optimized algorithms for production use
+- **Reliability**: Robust error handling and validation
+- **Maintainability**: Clean code architecture
+- **Testing**: Comprehensive test coverage
+
+## Development Process
+
+Each solution includes:
+- Detailed README with usage instructions
+- Performance and complexity analysis
+- Development notes documenting the evolution
+- Unit tests and benchmarks
+
+## Running the Solutions
+
+Each problem directory contains its own README with specific instructions. Generally:
+
 ```bash
+# Problem 1
 cd problem1
 go test -v
+go run cmd/main.go [arguments]
+
+# Problem 2
+cd problem2
+go test ./...
+go run cmd/main.go [arguments]
 ```
 
-#### Run benchmarks:
-```bash
-cd problem1
-go test -bench=.
-```
+## Technologies Used
 
-### Example Usage
+- **Language**: Go
+- **Blockchain**: Solana
+- **Protocols**: Raydium (AMM)
+- **Testing**: Go standard testing framework
+- **Dependencies**: Minimal (standard library only)
 
-```go
-import "deficheck/problem1"
+## AI Assistance Disclosure
 
-result := problem1.PadNumbers("James Bond 7", 3)
-// Output: "James Bond 007"
-```
+During development, AI tools were utilized for:
+- Code review and optimization suggestions
+- Test case generation
+- Documentation assistance
+- Debugging support
 
-### Performance Analysis
+All architectural decisions, core algorithms, and protocol integrations were independently designed and implemented. AI served as a productivity enhancement tool, with all suggestions validated through testing and manual verification.
 
-**Time Complexity**: O(n) where n is the length of the input string
-- Single pass through the string
-- Each character is processed exactly once
+## Performance Highlights
 
-**Space Complexity**: O(n) for the output string
-- Uses strings.Builder for efficient string concatenation
-- No additional data structures required
+- **Problem 1**: O(n) time complexity with optimized string building
+- **Problem 2**: Efficient pool discovery using Raydium v3 API
 
-**Optimization Decisions**:
-- Chose time efficiency over space by using strings.Builder
-- Character-by-character parsing avoids regex overhead for simple cases
-- No preprocessing or multiple passes required
-
-### Dependencies
-
-No external dependencies. Uses only Go standard library:
-- `fmt`: For formatting padded numbers
-- `strconv`: For string to integer conversion
-- `strings`: For efficient string building
-- `regexp`: For alternative implementation (not used in main solution)
+For detailed information about each solution, please refer to the respective problem directories.
